@@ -2,7 +2,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <div>
+    <div class = "z-20 border-t-4 border-white shadow-md">
       <aside
         id="logo-sidebar"
         class="fixed top-16 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
