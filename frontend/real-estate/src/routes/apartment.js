@@ -11,10 +11,10 @@ const Apartment = () => {
       <Navbar />
       <Sidebar />
       <div class="mt-16 p-[2%] mx-[2vw] ml-[18vw]">
-        <div class="flex rounded-2xl p-3 border shadow-md">
+        <div class="flex rounded-2xl p-3">
           <div>
-            <h1 class="font-semibold text-2xl py-3">호반 베르디움</h1>
-            <p class="mr-8">{info}</p>
+            <h1 class="font-semibold text-3xl py-3 mb-4 flex justify-center">호반 베르디움</h1>
+            <p class="mr-8 text-xl">{info}</p>
           </div>
           <img
             src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202409/04/db188d78-968d-4407-a75c-62dd5e79e852.jpg"
