@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../components/Navbar";
 
 const Apartment = () => {
   return (
-    <div>apartment</div>
-  )
-}
+    <div class="">
+      <Navbar />
 
-export default Apartment
+    </div>
+  );
+};
+
+export default Apartment;
