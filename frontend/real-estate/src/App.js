@@ -32,6 +32,7 @@ function App() {
       .catch((error) => {
         setError(error.message); // 에러 메시지 저장
       });
+
   };
   const handleSearch = (event) => {
     event.preventDefault();

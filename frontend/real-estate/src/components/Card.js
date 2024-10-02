@@ -14,6 +14,7 @@ const Card = ({name, code}) => {
         <a href="#">
           <img class="rounded-t-lg h-[50%] w-[100%] object-cover" src="https://i.namu.wiki/i/iz00cr1SJq-1_vFjV-nuxkmUcgOYIJyDVzCaPFNEPH1Bwew-CWJkmabf1PHLdk2P7h7PMy4X7QfqkfvqQ906Dw.webp" alt="" />
         </a>
+
       <div class="p-5">
         <a href="#">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
