@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Card from "./components/Card";
 import logo from "./dongsan.png"
@@ -6,12 +7,34 @@ import logo from "./dongsan.png"
 function App() {
   const navigate = useNavigate();
 
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // FastAPI에서 데이터 가져오기
+    fetch('http://127.0.0.1:5000/get/all-name-code')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('네트워크 응답에 문제가 있습니다.');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data); // 데이터를 state에 저장
+      })
+      .catch((error) => {
+        setError(error.message); // 에러 메시지 저장
+      });
+      console.log(data)
+    }, [data]);
+
   const handleSearch = () => {
     navigate("/apartment/1");
   };
   const handleHome = () => {
     navigate("/");
   };
+
 
   return (
 
@@ -60,14 +83,22 @@ function App() {
         </div>
       </form>
       </div>
+      <div>
+        <h1>데이터 목록</h1>
+        <ul>
+          {data.map((item) => (
+            <li key={item.apt_code}>{item.apt_name} - {item.apt_code}</li>
+          ))}
+        </ul>
+      </div>
       <div class = "flex justify-around gap-y-8 flex-wrap">
-        <Card name = "one"></Card>
-        <Card name = "one"></Card>
-        <Card name = "three"></Card>
+        <Card name = {data[0].apt_name} code={data[0].apt_code}></Card>
+        <Card name = {data[1].apt_name} code={data[1].apt_code}></Card>
+        <Card name = {data[7].apt_name} code={data[7].apt_code}></Card>
 
-        <Card name = "four"></Card>
-        <Card name = "five"></Card>
-        <Card name = "six"></Card>
+        <Card name = {data[3].apt_name} code={data[3].apt_code}></Card>
+        <Card name = {data[4].apt_name} code={data[4].apt_code}></Card>
+        <Card name = {data[5].apt_name} code={data[5].apt_code}></Card>
       </div>
       
     </div>
