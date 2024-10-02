@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const navigate = useNavigate();
 
-  const handleSearch = () => {
+  const handleSearch = (query) => {
     navigate("/apartment/1");
   };
   return (

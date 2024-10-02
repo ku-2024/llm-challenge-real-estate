@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav class="fixed top-0 left-0 right-0 bg-gray-800 shadow-lg">
+    <nav class="fixed top-0 left-0 right-0 bg-gray-800 shadow-lg w-[16vw]">
       <div class=" flex flex-wrap  items-center justify-start mx-auto p-4">
         {" "}
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">

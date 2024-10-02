@@ -8,9 +8,9 @@ const Apartment = () => {
 
   return (
     <div class = "bg-slate-100">
-      <Navbar />
+      {/* <Navbar /> */}
       <Sidebar />
-      <div class="mt-16 p-[2%] mx-[2vw] ml-[18vw]">
+      <div class="mt-3 p-[2%] mx-[2vw] ml-[18vw]">
         <div class="flex rounded-2xl p-3">
           <div>
             <h1 class="font-semibold text-3xl py-3 mb-4 flex justify-center">호반 베르디움</h1>
