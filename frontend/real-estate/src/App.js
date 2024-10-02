@@ -93,7 +93,7 @@ function App() {
       </div>
       <div class = "flex justify-around gap-y-8 flex-wrap">
       {data.map((item) => (
-             <Card name = {item.apt_name}></Card>
+             <Card name = {item.apt_name} code={item.apt_code}></Card>
           ))}
 
         {/* {data.forEach((index,val) => (
