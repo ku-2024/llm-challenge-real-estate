@@ -1,5 +1,7 @@
 import "./App.css";
 import { useNavigate } from "react-router-dom";
+import Card from "./components/Card";
+import logo from "./dongsan.png"
 
 function App() {
   const navigate = useNavigate();
@@ -7,9 +9,15 @@ function App() {
   const handleSearch = () => {
     navigate("/apartment/1");
   };
+  const handleHome = () => {
+    navigate("/");
+  };
+
   return (
 
-    <div class = "flex justify-center items-center h-[100vh]">
+    <div>
+      <div class = "flex justify-center items-center h-[10vh] bg-blue-100">
+      <img src={logo} width='100' onClick={handleHome}></img>
       <form class="max-w-md mx-auto">
         <label
           for="default-search"
@@ -51,6 +59,17 @@ function App() {
           </button>
         </div>
       </form>
+      </div>
+      <div class = "flex justify-around gap-y-8 flex-wrap">
+        <Card name = "one"></Card>
+        <Card name = "one"></Card>
+        <Card name = "three"></Card>
+
+        <Card name = "four"></Card>
+        <Card name = "five"></Card>
+        <Card name = "six"></Card>
+      </div>
+      
     </div>
   );
 }
