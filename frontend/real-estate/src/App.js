@@ -92,13 +92,15 @@ function App() {
         </ul>
       </div>
       <div class = "flex justify-around gap-y-8 flex-wrap">
-        <Card name = {data[0].apt_name} code={data[0].apt_code}></Card>
-        <Card name = {data[1].apt_name} code={data[1].apt_code}></Card>
-        <Card name = {data[7].apt_name} code={data[7].apt_code}></Card>
+      {data.map((item) => (
+             <Card name = {item.apt_name}></Card>
+          ))}
 
-        <Card name = {data[3].apt_name} code={data[3].apt_code}></Card>
-        <Card name = {data[4].apt_name} code={data[4].apt_code}></Card>
-        <Card name = {data[5].apt_name} code={data[5].apt_code}></Card>
+        {/* {data.forEach((index,val) => (
+             <Card name = {data[index].apt_name} ></Card>
+          ))} */}
+
+       
       </div>
       
     </div>
