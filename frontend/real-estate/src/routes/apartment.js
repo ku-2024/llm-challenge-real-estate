@@ -1,19 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import DetailInfo from "../components/DetailInfo";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 const Apartment = () => {
   let info = `Lorem Ipsum은 인쇄 및 조판 산업에서 단순한 더미 텍스트입니다. Lorem Ipsum은 1500년대에 한 무명의 인쇄공이 활자 배열을 뒤섞어 본보기 서적을 만들면서부터 업계 표준 더미 텍스트로 자리 잡았습니다. 이 텍스트는 5세기 동안 변함없이 살아남았을 뿐만 아니라 전자 조판으로의 도약도 이루었습니다. 1960년대에는 Lorem Ipsum 구절이 담긴 Letraset 시트가 출시되면서 널리 알려졌으며, 최근에는 Aldus PageMaker와 같은 데스크톱 출판 소프트웨어에도 Lorem Ipsum의 다양한 버전이 포함되었습니다.`;
+  const { apartmentId, apartmentName } = useParams();
+  const [apt, setApt] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getData();
+    console.log(apt)
+  }, []);
+
+  const getData = () => {
+    fetch(
+      `http://127.0.0.1:5000/getdata?apt_code=${apartmentId}&apt_name=${apartmentName}`
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("네트워크 응답에 문제가 있습니다.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setApt(data); // Update the apt state
+      })
+      .catch((error) => {
+        setError(error.message); // Handle error
+      });
+  };
 
   return (
-    <div class = "bg-slate-100">
+    <div class="bg-slate-100">
       {/* <Navbar /> */}
       <Sidebar />
       <div class="mt-3 p-[2%] mx-[2vw] ml-[18vw]">
         <div class="flex rounded-2xl p-3">
           <div>
-            <h1 class="font-semibold text-3xl py-3 mb-4 flex justify-center">호반 베르디움</h1>
+            {/* <h1 class="text-black">Apartment ID: {apartmentId}</h1> */}
+            <h1 class="font-semibold text-3xl py-3 mb-4 flex justify-center">
+              {apt.apt_name}
+            </h1>
             <p class="mr-8 text-xl">{info}</p>
           </div>
           <img

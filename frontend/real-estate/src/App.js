@@ -5,7 +5,6 @@ import Card from "./components/Card";
 import logo from "./dongsan.png";
 
 function App() {
-  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
   const [dataToShow, setDataToShow] = useState([]);
@@ -42,9 +41,6 @@ function App() {
       element.apt_name.includes(searchTerm)
     );
     setDataToShow(newData);
-  };
-  const handleHome = () => {
-    navigate("/");
   };
 
   return (
