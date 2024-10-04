@@ -23,8 +23,8 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        setData(data); // 데이터를 state에 저장
-        setDataToShow(data.slice(0, 3));
+        setData(data.data); // 데이터를 state에 저장
+        setDataToShow(data.data.slice(0, 3));
       })
       .catch((error) => {
         setError(error.message); // 에러 메시지 저장
