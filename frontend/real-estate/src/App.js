@@ -1,11 +1,8 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Card from "./components/Card";
-import logo from "./dongsan.png";
 
 function App() {
-
   const [data, setData] = useState([]);
   const [dataToShow, setDataToShow] = useState([]);
   const [error, setError] = useState(null);
@@ -14,6 +11,7 @@ function App() {
   useEffect(() => {
     // FastAPI에서 데이터 가져오기
     fetchData();
+    setDataToShow(data)
   }, []);
 
   const fetchData = () => {
@@ -26,12 +24,11 @@ function App() {
       })
       .then((data) => {
         setData(data); // 데이터를 state에 저장
-        setDataToShow(data);
+        setDataToShow(data.slice(0, 3));
       })
       .catch((error) => {
         setError(error.message); // 에러 메시지 저장
       });
-
   };
   const handleSearch = (event) => {
     event.preventDefault();
@@ -44,11 +41,11 @@ function App() {
   };
 
   return (
-    <div>
-      {/* <div class="w-[100vw] flex justify-center">
-        <img class="" src={logo} width="300" onClick={fetchData}></img>
-      </div> */}
-      <div class="flex justify-center items-center h-[10vh]">
+    <div class="bg-gray-600 min-h-screen flex-col items-center justify-center ">
+      <div class="w-[100vw] flex flex-col items-center justify-center pt-5  ">
+        <img src="/wikiDSLogo.png" class="w-[20%] m-[-3%]"></img>
+      </div>
+      <div class="flex justify-center items-center h-[10vh] mb-4">
         <form class=" mx-auto">
           <label
             for="default-search"
@@ -93,9 +90,9 @@ function App() {
           </div>
         </form>
       </div>
-      <div class="mx-20">
+      <div class="mx-20 pb-20">
         <div class="flex justify-around gap-y-5 flex-wrap">
-          {dataToShow.slice(0, 6).map((item) => (
+          {dataToShow.map((item) => (
             <Card
               key={item.apt_code}
               name={item.apt_name}
