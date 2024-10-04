@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Card = ({name, code}) => {
+  let aptCodeList = ['3ae33ebe', '79e9ff17','93c2b21f','1493f266','4139b5cd','a32c5888','ac976530','b1b4b365','db1e18fb']
+  let [imgCode, setImgCode] = useState("3ae33ebe")
+
+  useEffect (()=>{
+    setImgCode(checkCodeList(code))
+  })
+
+  let checkCodeList = (code) => {
+    if (aptCodeList.includes(code)) {
+      return code;
+    } else {
+      // 이미지가 없으면 랜덤으로 imgList 중 하나를 반환
+      let randomIndex = Math.floor(Math.random() * aptCodeList.length);
+      return aptCodeList[randomIndex];
+    }
+
+  }
 
   return (
     <div class="max-w-sm border rounded-lg shadow bg-gray-800 border-gray-700">
         <a href="#">
-          <img class="rounded-t-lg h-[50%] w-[100%] object-cover" src="https://i.namu.wiki/i/iz00cr1SJq-1_vFjV-nuxkmUcgOYIJyDVzCaPFNEPH1Bwew-CWJkmabf1PHLdk2P7h7PMy4X7QfqkfvqQ906Dw.webp" alt="" />
+          <img class="rounded-t-lg h-[50%] w-[100%] object-cover" src={`/image/${imgCode}.jpeg`} alt="" />
         </a>
 
       <div class="p-5">

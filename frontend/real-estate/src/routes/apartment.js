@@ -46,7 +46,7 @@ const Apartment = () => {
               <p className="mr-8 text-xl">{info}</p>
             </div>
             <img
-              src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202409/04/db188d78-968d-4407-a75c-62dd5e79e852.jpg"
+              src='/image/db1e18fb.jpeg'
               class="w-[20vw]"
               alt="Apartment Image"
             />
