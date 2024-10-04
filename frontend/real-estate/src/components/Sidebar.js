@@ -1,6 +1,6 @@
 import React from "react";
 
-const Sidebar = () => {
+const Sidebar = ({icons}) => {
   return (
     <div class="z-20 border-t-4 border-white shadow-md ">
       <aside
