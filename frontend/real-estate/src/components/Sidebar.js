@@ -8,7 +8,7 @@ const Sidebar = () => {
         class="fixed top-0 left-0 z-40 w-[16vw] h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div class=" flex flex-wrap  items-center justify-start mx-auto dark:bg-gray-800">
+        <div class=" flex flex-wrap  items-center justify-start mx-auto bg-gray-800">
           {" "}
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <div class="flex justify-start">
@@ -19,15 +19,15 @@ const Sidebar = () => {
             </div>
           </a>
         </div>
-        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 bg-gray-800">
           <ul class="space-y-2 font-medium">
             <li>
               <a
                 href="#A-env"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg
-                  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  class="w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -44,10 +44,10 @@ const Sidebar = () => {
             <li>
               <a
                 href="#A-community"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg
-                  class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -63,10 +63,10 @@ const Sidebar = () => {
             <li>
               <a
                 href="#A-attribute"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg
-                  class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -82,10 +82,10 @@ const Sidebar = () => {
             <li>
               <a
                 href="#A-infra"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg
-                  class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -101,10 +101,10 @@ const Sidebar = () => {
             <li>
               <a
                 href="#A-traffic"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg
-                  class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -118,10 +118,10 @@ const Sidebar = () => {
             <li>
               <a
                 href="#A-school"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg
-                  class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -141,10 +141,10 @@ const Sidebar = () => {
             <li>
               <a
                 href="#A-sound"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg
-                  class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -160,10 +160,10 @@ const Sidebar = () => {
             <li>
               <a
                 href="#A-parking"
-                class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg
-                  class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  class="flex-shrink-0 w-5 h-5 transition duration-75 text-gray-400 group-hover:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
