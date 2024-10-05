@@ -12,15 +12,12 @@ const Sidebar = () => {
         <div class=" flex flex-wrap  items-center justify-start mx-auto bg-gray-800">
           {" "}
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <div class="flex justify-start">
-              <img src="/wikiDSLogo.png" class="w-[35%]"></img>
-              <div class="text-white font-semibold text-xl flex flex-col items-center justify-center">
-                위키동산
-              </div>
+            <div class="flex justify-center">
+              <img src="/Logo2.png" class="w-[63%]"></img>
             </div>
           </a>
         </div>
-        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 bg-gray-800">
+        <div class="h-full px-3  overflow-y-auto bg-gray-50 bg-gray-800">
           <ul class="space-y-2 font-medium">
             <li>
               <a
