@@ -24,7 +24,6 @@ const Apartment = () => {
   useEffect(() => {
     getData();
     getCategoryData();
-    console.log(apartmentId)
   }, []);
 
   const getData = () => {
@@ -52,7 +51,6 @@ const Apartment = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("Fetched data:", data);
         setSummaries(data.data || []);
         const reviews = data?.data?.map((summary) => summary.review) || [];
         setReviewsArray(reviews);
