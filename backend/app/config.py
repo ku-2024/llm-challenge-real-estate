@@ -1,0 +1,1 @@
+SQLALCHEMY_DATABASE_URL = "mysql+aiomysql://root:1234@localhost:3306/budongsan"
