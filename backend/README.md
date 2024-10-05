@@ -17,9 +17,11 @@
 
 ## conda 가상환경 설정
 `conda create -n llm_env python=3.9; conda activate llm_env;  `
+
 `pip install -r requirements.txt`
 
 
 ## 실행
 `cd ./backend`
+
 `uvicorn main:app --reload --host 127.0.0.1 --port 5000`
