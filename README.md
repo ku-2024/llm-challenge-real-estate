@@ -1,6 +1,8 @@
 # 위키동산
 ![Title](/src/title.png "Title")
 
+![builtbydev](https://camo.githubusercontent.com/40f6e06565023f14c6cb7a60088f64ec4d01418d44ceedb80a1848e8365dfbe1/687474703a2f2f466f7254686542616467652e636f6d2f696d616765732f6261646765732f6275696c742d62792d646576656c6f706572732e737667)
+
 ## 📜 Project Overview
 나만의 공인중개사, 위키동산
 
@@ -126,3 +128,19 @@ python llm_generate.py
 
 ## 🙌 Team Members
 ![Team](/src/team.png "Team")
+
+![react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![mariadb](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
+![fastapi](https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![sqlalchemy](https://img.shields.io/badge/sqlalchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)
+![python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
+![ppt](https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white)
+![canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?&style=for-the-badge&logo=Canva&logoColor=white)
+![figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![vscode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+![github](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)
+![git](https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
