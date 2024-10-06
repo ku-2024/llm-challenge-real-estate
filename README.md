@@ -18,7 +18,7 @@
 - 채팅
 
 ## Project Architecture
-![Project Architecture](/src/Project Architecture.jpg "Project Architecture")
+![Project Architecture](/src/project_architecture.jpg "Project Architecture")
 <details>
   <summary>Frontend</summary>
 
