@@ -1,23 +1,27 @@
 # 위키동산
-## Project Overview
+![Title](/src/title.png "Title")
+
+## 📜 Project Overview
 나만의 공인중개사, 위키동산
 
 > **‘위키’피디아 + 부‘동산’ 합성어로 아파트 실거주자들의 후기를 모아서 한 눈에 볼 수 있는 서비스**
 
-### Objective
+[프로젝트 데모 영상](https://www.youtube.com/watch?v=ReRWocARLd8)
+
+### 🎯 Objective
 - 효율적인 리뷰 데이터 수집
 - LLM을 활용한 리뷰 분류 및 요약
 - 채팅을 통한 맞춤형 경험 제공
 
 > **다양한 소스에서 수집한 리뷰를 하나로 모으고 분류하여, 믿을 수 있고 요약된 정보 제공**
 
-### Key Features
+### 🔑 Key Features
 - 후기 수집
 - 카테고리 분류
 - 요약
 - 채팅
 
-## Project Architecture
+## 🏘 Project Architecture
 ![Project Architecture](/src/project_architecture.jpg "Project Architecture")
 <details>
   <summary>Frontend</summary>
@@ -63,7 +67,10 @@
   
 </details>
 
-## Implementation Details
+## 🌟 Implementation Details
+
+각 파트 별 디렉토리의 README 파일을 참고해주세요.
+
 ### Frontend
 ```
 cd frontend
@@ -109,10 +116,13 @@ python process.py
 python llm_generate.py
 ```
 
-## Future Work
-- 데이터 실시간 업데이트
-- 지도 API
-- 챗봇
+## 🔥 Future Work
+- 데이터 실시간 업데이트: 새로 나오는 후기를 실시간으로 크롤링하여 LLM 모델 업데이트
+- 지도 API: 아파트 탐색 시, 지도를 보며 위치 정보도 함께 탐색
+- 챗봇: 원활한 후기 탐방을 위해 챗봇 구현 및 성능 향상
 - 평점
 - 데이터 추가
 
+
+## 🙌 Team Members
+![Team](/src/team.png "Team")
