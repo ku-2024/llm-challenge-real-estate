@@ -4,6 +4,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Apartment from "./routes/apartment";
+import { NavermapsProvider } from "react-naver-maps";
+
+const CLIENT_ID=process.env.CLIENT_ID
+
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -21,7 +25,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <NavermapsProvider ncpClientId={CLIENT_ID}>
     <RouterProvider router={router} />
+    </NavermapsProvider>
   </React.StrictMode>
 );
 

@@ -1,6 +1,9 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
+import Map from "./components/Maps";
+import { Container as MapDiv, NaverMap, Marker, useNavermaps } from 'react-naver-maps'
+// import { NavermapsProvider } from 'react-naver-maps';x
 
 function App() {
   const [data, setData] = useState([]);
@@ -86,6 +89,16 @@ function App() {
           </div>
         </form>
       </div>
+      <div>
+        <MapDiv
+        style={{
+          width: '80%',
+          height: '600px',
+        }}
+      >
+          <Map/>
+        </MapDiv>
+      </div>
       <div className="mx-20 pb-20">
         <div className="flex justify-around gap-y-5 flex-wrap">
           {dataToShow.map((item) => (
@@ -94,6 +107,7 @@ function App() {
               name={item.apt_name}
               code={item.apt_code}
             />
+            
           ))}
         </div>
       </div>
