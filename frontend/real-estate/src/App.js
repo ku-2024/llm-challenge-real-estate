@@ -10,6 +10,9 @@ function App() {
   const [dataToShow, setDataToShow] = useState([]);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [addressSearchTerm, setAddressSearchTerm] = useState(""); // 주소 검색어 상태
+  const [mapCenter, setMapCenter] = useState({ lat: 37.3595704, lng: 127.105399 }); // 지도 중심 좌표
+  const navermaps = useNavermaps(); // 네이버 지도 객체
 
   useEffect(() => {
     fetchData();
@@ -37,7 +40,58 @@ function App() {
     const newData = data.filter((element) =>
       element.apt_name.includes(searchTerm)
     );
+    console.log(newData)
     setDataToShow(newData);
+    if (!searchTerm) return;
+    
+    // 네이버 지오코딩 서비스 사용
+    navermaps.Service.geocode({
+      query: searchTerm,
+    }, (status, response) => {
+      if (status === navermaps.Service.Status.ERROR) {
+        alert('잘못된 주소입니다.');
+        return;
+      }
+      if (response.v2.meta.totalCount === 0) {
+        alert('검색 결과가 없습니다.');
+        return;
+      }
+
+      const item = response.v2.addresses[0];
+      const latitude = item.y;
+      const longitude = item.x;
+      console.log(item)
+
+      setMapCenter({ lat: parseFloat(latitude), lng: parseFloat(longitude) });
+    });
+  };
+
+  //주소로 검색
+  const handleAddressSearch = (event) => {
+    event.preventDefault();
+    if (!addressSearchTerm) return;
+    
+    // 네이버 지오코딩 서비스 사용
+    navermaps.Service.geocode({
+      query: addressSearchTerm,
+    }, (status, response) => {
+      if (status === navermaps.Service.Status.ERROR) {
+        alert('잘못된 주소입니다.');
+        return;
+      }
+      if (response.v2.meta.totalCount === 0) {
+        alert('검색 결과가 없습니다.');
+        return;
+      }
+
+      const item = response.v2.addresses[0];
+      const latitude = item.y;
+      const longitude = item.x;
+      console.log(item)
+
+      setMapCenter({ lat: parseFloat(latitude), lng: parseFloat(longitude) });
+    });
+
   };
 
   return (
@@ -89,14 +143,46 @@ function App() {
           </div>
         </form>
       </div>
+
+      {/* 주소 검색 */}
+      <div className="flex justify-center items-center h-[10vh] mb-4">
+        <form className=" mx-auto" onSubmit={handleAddressSearch}>
+          <div className="relative w-[50vw]">
+            <input
+              type="search"
+              className="block w-full p-4 text-sm border rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-white"
+              placeholder="주소 검색"
+              value={addressSearchTerm}
+              onChange={(e) => setAddressSearchTerm(e.target.value)} // 주소 검색어 업데이트
+              required
+            />
+            <button
+              type="submit"
+              className="text-white absolute right-2 bottom-2 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 bg-blue-600 hover:bg-blue-700"
+            >
+              주소 검색
+            </button>
+          </div>
+        </form>
+      </div>
+
+
       <div>
         <MapDiv
         style={{
-          width: '80%',
+          width: '100%',
           height: '600px',
         }}
+
       >
-          <Map/>
+          <NaverMap
+            defaultZoom={14}
+            center={new navermaps.LatLng(mapCenter.lat, mapCenter.lng)}
+          >
+            <Marker
+              position={new navermaps.LatLng(mapCenter.lat, mapCenter.lng)}
+            />
+          </NaverMap>
         </MapDiv>
       </div>
       <div className="mx-20 pb-20">

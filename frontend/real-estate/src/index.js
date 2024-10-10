@@ -6,8 +6,6 @@ import App from "./App";
 import Apartment from "./routes/apartment";
 import { NavermapsProvider } from "react-naver-maps";
 
-const CLIENT_ID=process.env.CLIENT_ID
-
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -23,9 +21,11 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const CLIENT_ID=process.env.REACT_APP_CLIENT_ID
+
 root.render(
   <React.StrictMode>
-    <NavermapsProvider ncpClientId={CLIENT_ID}>
+    <NavermapsProvider ncpClientId={CLIENT_ID} submodules={["geocoder"]}>
     <RouterProvider router={router} />
     </NavermapsProvider>
   </React.StrictMode>
