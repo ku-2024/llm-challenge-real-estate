@@ -102,7 +102,8 @@ async def get_all_names_and_code(page: int, size: int,  db: AsyncSession = Depen
     Retrieves all apartment names along with their unique codes.
 
     Params:
-        None
+        page: for pagenation
+        size: for pagenation
 
     Returns:
         Any: A list of all apartment names with their corresponding codes.
