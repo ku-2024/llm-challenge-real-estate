@@ -2,7 +2,9 @@
 import pandas as pd
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
+from sqlalchemy import func
 from app.models import AptReview, AptTrade, AptInfo, AptReviewSummary
+from fastapi import HTTPException
 
 async def insert_apt_info(session: AsyncSession, filename: str):
     info_df = pd.read_csv(filename, na_values=['nan', 'NaN', 'NAN', ''])
@@ -116,12 +118,38 @@ async def get_all_name_sq(db: AsyncSession):
     return {'status':200,
             'data':[{'apt_code':apt_code, 'apt_name': apt_name, 'apt_sq': f"{apt_sq}㎡"} for apt_name, apt_code, apt_sq in results]}
 
-async def get_all_name_code(db: AsyncSession):
-    result = await db.execute(select(AptInfo.apt_name, AptInfo.apt_code))
+
+async def get_all_name_code(db: AsyncSession, page: int = 1, page_size: int = 10):
+    if page < 1:
+        raise HTTPException(status_code=400, detail="Page number must be greater than 0")
+    
+    offset = (page - 1) * page_size
+    
+    # 총 개수 조회
+    total_query = select(func.count()).select_from(AptInfo)
+    total = await db.scalar(total_query)
+    
+    # 페이지 데이터 조회
+    query = (
+        select(AptInfo.apt_name, AptInfo.apt_code, AptInfo.latitude, AptInfo.longitude)
+        .offset(offset)
+        .limit(page_size)
+    )
+    
+    result = await db.execute(query)
     results = result.all()
-    print(results)
-    return {'status':200,
-             'data':[{'apt_name': apt_name, 'apt_code': apt_code} for apt_name, apt_code in results]}
+    
+    if not results and page > 1:
+        # 요청한 페이지가 데이터 범위를 벗어난 경우
+        raise HTTPException(status_code=404, detail="Page not found")
+    
+    return {
+        'status': 200,
+        'data': [{'apt_name': r.apt_name, 'apt_code': r.apt_code, 'latitude': r.latitude, 'longitude': r.longitude} for r in results],
+        'total': total,
+        'page': page,
+        'page_size': page_size
+    }
 
 
 async def get_region_apt_data(db: AsyncSession):
