@@ -145,7 +145,7 @@ async def get_all_name_code(db: AsyncSession, page: int = 1, page_size: int = 10
     
     return {
         'status': 200,
-        'data': [{'apt_name': r.apt_name, 'apt_code': r.apt_code, 'latitude': r.latitude, 'longitude': r.longitude, 'land_address': r.land_address, 'loa_address': r.land_address} for r in results],
+        'data': [{'apt_name': r.apt_name, 'apt_code': r.apt_code, 'latitude': r.latitude, 'longitude': r.longitude, 'land_address': r.land_address} for r in results],
         'total': total,
         'page': page,
         'page_size': page_size
