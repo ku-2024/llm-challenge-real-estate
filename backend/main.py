@@ -97,7 +97,7 @@ async def get_all_names_and_sq(db: AsyncSession = Depends(get_db)):
     return await get_all_name_sq(db)
 
 @app.get("/get/all-name-code")
-async def get_all_names_and_code(db: AsyncSession = Depends(get_db)):
+async def get_all_names_and_code(page: int, size: int,  db: AsyncSession = Depends(get_db)):
     """
     Retrieves all apartment names along with their unique codes.
 
@@ -107,7 +107,7 @@ async def get_all_names_and_code(db: AsyncSession = Depends(get_db)):
     Returns:
         Any: A list of all apartment names with their corresponding codes.
     """    
-    return await get_all_name_code(db)
+    return await get_all_name_code(db = db, page = page, page_size = size)
 
 @app.get("/get/name-price")
 async def get_all_names_and_code(db: AsyncSession = Depends(get_db)):
